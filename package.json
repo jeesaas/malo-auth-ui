@@ -2,7 +2,7 @@
   "name": "malo-seckill-ui",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --mode development",
+    "dev": "vite --mode dev",
     "build": "vite build",
     "preview": "vite preview"
   },

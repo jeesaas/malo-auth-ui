@@ -9,6 +9,15 @@
 <script>
   export default {
     name: "Welcome",
+    mounted() {
+      this.$request({
+        method:'get',
+        url:'/demo',
+        data:{}
+      }).then((res)=>{
+        console.log(res)
+      })
+    },
     methods:{
       goLogin(){
         this.$router.push("/login")
