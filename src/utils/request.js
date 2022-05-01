@@ -29,18 +29,18 @@ service.interceptors.request.use((req) => {
 
 // 响应拦截
 service.interceptors.response.use((res) => {
-    const { code, data, msg } = res.data;
-    if (code === 200) {
+    const { statusCode, data, errorCode,errorMsg} = res.data;
+    if (statusCode === 200) {
         return data;
-    } else if (code === 500001) {
+    } else if (statusCode === 401) {
         ElMessage.error(TOKEN_INVALID)
         setTimeout(() => {
             router.push('/login')
         }, 1500)
         return Promise.reject(TOKEN_INVALID)
     } else {
-        ElMessage.error(msg || NETWORK_ERROR)
-        return Promise.reject(msg || NETWORK_ERROR)
+        ElMessage.error(errorMsg || NETWORK_ERROR)
+        return Promise.reject(errorMsg || NETWORK_ERROR)
     }
 })
 
