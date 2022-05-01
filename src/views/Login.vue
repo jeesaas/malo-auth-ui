@@ -70,7 +70,15 @@ export default {
     column-reverse 显示为列。但方向和column属性值是反的
   */
   justify-content: center;/*属性决定了主轴方向上子项的对齐和分布方式*/
-  align-items: center;/*每一行中的子元素上下对齐方式*/
+  /*补充
+    flex-start ： 子项都去起始位置对齐。
+    flex-end ： 子项都去结束位置对齐。
+    center ： 子项都去中心位置对齐。
+    space-between : 表现为两端对齐。between是中间的意思，意思是多余的空白间距只在元素中间区域分配。
+    space-around : around是环绕的意思，意思是每个flex子项两侧都环绕互不干扰的等宽的空白间距，最终视觉上边缘两侧的空白只有中间空白宽度一半。
+    space-evenly : evenly是匀称、平等的意思。也就是视觉上，每个flex子项两侧空白间距完全相等。
+   */
+  align-items: center;/*每一行中的子元素上下对齐方式 flex-start:顶部对齐 center:居中对齐 flex-end:底部对齐*/
   background-color: #f9fcff;
   width: 100vw;
   height: 100vh;
